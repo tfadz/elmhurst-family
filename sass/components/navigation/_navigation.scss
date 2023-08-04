@@ -1,14 +1,12 @@
 .main-navigation {
   display: flex;
   justify-content: flex-end;
-  padding: 1rem 0 1.5rem 0;
+  padding: 2rem 0 0 0;
 
   #primary-menu {
     display: flex;
     justify-content: flex-end;
     margin: 0;
-    padding-left: 0;
-    padding-top: 2rem;
     white-space: nowrap;
 
     @media (max-width: $medium) {
@@ -18,21 +16,22 @@
     li:hover > ul,
     li.focus > ul {
       left: auto;
+      background: $black;
     }
 
     > li {
-      padding-bottom: 1rem;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.35);
       position: relative;
 
       &:before {
         content: "";
-        bottom: -2px;
-        border-bottom: 3px solid $purple;
+        bottom: 5px;
+        border-bottom: 2px solid $purple;
         left: 0;
+        right: 0;
         transition: .3s ease-in-out;
         width: 0%;
         position: absolute;
+        margin: 0 auto;
       }
 
       &.current_page_item,
@@ -42,35 +41,41 @@
         &:before {
           content: "";
           position: absolute;
-          bottom: -2px;
+          bottom: 5px;
           left: 0;
-          width: 100%;
-          border-bottom: 3px solid $purple;
+          right: 0;
+          margin: 0 auto;
+          width: 60%;
+          border-bottom: 2px solid $purple;
         }
       }
 
       &.menu-item-has-children {
         position: relative;
 
+        a {
+          padding-right: 2rem;
+        }
+
         &:after {
           content: "\f107";
           display: inline-block;
           font-family: "Font Awesome 5 Pro";
-          font-size: 1.5rem;
+          font-size: 1.65rem;
           font-weight: 400;
           color: $orange;
           position: absolute;
-          top: .8rem;
-          right: 3px;
+          bottom: .15rem;
+          right: .35rem;
           z-index: 1;
         }
 
         &:hover {
-          background: $white;
-          color: $blue-dark;
+          background: $black;
+          color: $white;
 
           > a {
-            color: $blue-dark;
+            color: $white;
             text-shadow: none;
           }
 
@@ -81,20 +86,22 @@
       }
 
       > a {
-        color: $white;
+        color: $black;
         display: block;
-        font-size: 1.45rem;
-        padding: 0.75rem 1.65rem 0.25rem;
+        font-weight: $semibold;
+        font-size: 1.5rem;
+        padding: 0.75rem 1.5rem .5rem 1.5rem;
         position: relative;
         text-decoration: none;
-        text-transform: uppercase;
+
+        // text-transform: uppercase;
 
         &:focus, &:visited {
           text-decoration: none;
         }
 
         &:hover {
-          color: $white;
+          color: $blue-dark;
           text-decoration: none;
         }
       }
@@ -102,10 +109,12 @@
       &:hover {
         &:before {
           position: absolute;
-          bottom: -2px;
+          bottom: 5px;
           left: 0;
-          width: 100%;
-          border-bottom: 3px solid $orange;
+          right: 0;
+          margin: 0 auto;
+          width: 70%;
+          border-bottom: 2px solid $orange;
         }
       }
 
@@ -120,9 +129,14 @@
 
         > li {
           padding-bottom: 0.4rem;
+          padding-left: .5rem;
           position: relative;
-          border-top: 1px solid rgba($black, 0.25);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.5);
           transition: none;
+
+          &:last-child {
+            border-bottom: none;
+          }
 
           &:before {
             content: none;
@@ -131,14 +145,13 @@
           > a {
             text-shadow: none;
             min-width: 150px;
-            color: $blue-dark;
+            color: $white;
             font-size: 1.25rem;
             text-decoration: none;
-            padding: 0.75rem 1.65rem 0.25rem;
+            padding: 0.5rem 1rem 0.25rem;
             display: block;
             position: relative;
             text-decoration: none;
-            text-transform: uppercase;
 
             &:hover {
               color: $white;
