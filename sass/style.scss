@@ -86,12 +86,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "components/components";
 
 /*--------------------------------------------------------------
-# Plugins
+# Blocks
 --------------------------------------------------------------*/
-
-/* Jetpack infinite scroll
---------------------------------------------- */
-@import "plugins/jetpack/infinite-scroll";
+@import "blocks/blocks";
 
 /*--------------------------------------------------------------
 # Utilities

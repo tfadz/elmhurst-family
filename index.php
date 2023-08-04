@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Pensacola
+ * @package Elmhurst_Family
  */
 
 get_header();

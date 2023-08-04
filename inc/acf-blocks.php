@@ -5,10 +5,19 @@ function acf_blocks_init()
 {
 
     acf_register_block_type(array(
-        'name'              => 'hero',
+        'name'              => 'hero_slider',
         'title'             => __('Hero'),
         'render_template'   => '/template-parts/blocks/hero.php',
-        'category'          => 'pensacola-blocks'
+        'icon' => 'format-aside',
+		'mode' => 'edit',
+    ));
+    
+    acf_register_block_type(array(
+        'name'              => 'team',
+        'title'             => __('Team'),
+        'render_template'   => '/template-parts/blocks/team.php',
+        'icon' => 'format-aside',
+		'mode' => 'edit',
     ));
 
 

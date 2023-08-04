@@ -1,8 +1,14 @@
 $black: #323232;
 $white: #FFFFFF;
+$offwhite: #EEEEEE;
 $gray: #676767;
-$blue: #00008B;
-
+$blue: #2569B0;
+$blue-dark: #23314F;
+$blue-light: #EFF6FB;
+$green: #72C562;
+$orange: #EA8E3A;
+$purple: #974C8A;
+$purple-light: #D86FC6;
 
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
@@ -14,9 +20,11 @@ $color__background-ins: #fff9c0;
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: inherit; //royalblue
-$color__link-visited: inherit; 
-$color__link-hover: $blue; 
+$color__link: inherit;
+
+//royalblue
+$color__link-visited: inherit;
+$color__link-hover: inherit;
 $color__text-main: $black;
 
 $color__border-button: #ccc #ccc #bbb;

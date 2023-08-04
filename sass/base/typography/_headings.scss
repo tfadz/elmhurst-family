@@ -7,14 +7,13 @@ h6 {
   clear: both;
   margin: 0;
   padding-bottom: .65rem;
-  letter-spacing: 0.01em;
   font-weight: $regular;
 
   &:empty {
     display: none;
   }
 
-  @media screen and (max-width: $xsmall) {
+  @media (max-width: $xsmall) {
     br {
       display: none;
     }
@@ -22,43 +21,69 @@ h6 {
 }
 
 h1, .h1 {
-  // 48px
+  color: $blue-dark;
   font-size: 3rem;
   line-height: 1.3;
-  font-family: $secondary-font;
+
+  @media (max-width: $xsmall) {
+    font-size: 2.25rem;
+  }
 
   &.xl {
-    // 58px
-    font-size: 3.625rem;
+    // 62px
+    font-size: 3.875rem;
     line-height: 1.3;
+
+    @media (max-width: $xsmall) {
+      font-size: 2.25rem;
+    }
   }
 }
 
 h2, .h2 {
   // 40px
-  font-size: 2.5rem;
-  font-family: $primary-font;
-  line-height: 1.15;
-  padding-bottom: 1.5rem;
-  color: $blue;
+  font-size: 2.25rem;
+  font-weight: $regular;
+  font-family: $secondary-font;
+  line-height: normal;
+  padding-bottom: .5rem;
+  color: $purple;
+
+  &.forms {
+    position: relative;
+    display: inline-flex;
+    letter-spacing: -0.008em;
+    font-weight: $regular;
+    font-family: $secondary-font;
+  }
 
   &.xl {
     //48px
     font-size: 3rem;
     padding-bottom: 1rem;
     color: $white;
+
+    @media (max-width: $small) {
+      font-size: 2rem;
+      line-height: 1.2;
+    }
   }
 
   @media (max-width: $small) {
-    font-size: 2.5rem;
+    font-size: 2rem;
     line-height: 1.2;
   }
 }
 
 h3, .h3 {
-  // 35px
-  font-size: 2.1875rem;
-  line-height: 1.3;
+  // 30px
+  font-size: 1.75rem;
+  line-height: 1.1;
+  padding-bottom: 1rem;
+  letter-spacing: -0.008em;
+  font-weight: $light;
+  font-family: $secondary-font;
+  color: $black;
 }
 
 h4, .h4 {

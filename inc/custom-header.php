@@ -8,39 +8,39 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package Pensacola
+ * @package Elmhurst_Family
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses Pensacola_header_style()
+ * @uses elmhurst_family_header_style()
  */
-function Pensacola_custom_header_setup() {
+function elmhurst_family_custom_header_setup() {
 	add_theme_support(
 		'custom-header',
 		apply_filters(
-			'Pensacola_custom_header_args',
+			'elmhurst_family_custom_header_args',
 			array(
 				'default-image'      => '',
 				'default-text-color' => '000000',
 				'width'              => 1000,
 				'height'             => 250,
 				'flex-height'        => true,
-				'wp-head-callback'   => 'Pensacola_header_style',
+				'wp-head-callback'   => 'elmhurst_family_header_style',
 			)
 		)
 	);
 }
-add_action( 'after_setup_theme', 'Pensacola_custom_header_setup' );
+add_action( 'after_setup_theme', 'elmhurst_family_custom_header_setup' );
 
-if ( ! function_exists( 'Pensacola_header_style' ) ) :
+if ( ! function_exists( 'elmhurst_family_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see Pensacola_custom_header_setup().
+	 * @see elmhurst_family_custom_header_setup().
 	 */
-	function Pensacola_header_style() {
+	function elmhurst_family_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

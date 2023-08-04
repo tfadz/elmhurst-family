@@ -1,4 +1,4 @@
-// npm install gulp sass gulp-csso gulp-concat gulp-sourcemaps browser-sync
+// npm install gulp sass gulp-sass gulp-csso gulp-concat gulp-postcss gulp-sourcemaps gulp-autoprefixer browser-sync gulp-uglify 
 
 const { src, dest, watch } = require('gulp');
 const gulp = require('gulp');
@@ -35,7 +35,7 @@ function js() {
 
 function browser() {
   browserSync.init({
-      proxy: 'http://localhost:8888/',
+      proxy: 'http://localhost:8888/elmhurst',
       files: [
           './**/*.php',
           './js/theme/*.js'

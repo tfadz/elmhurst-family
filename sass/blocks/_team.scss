@@ -1,0 +1,353 @@
+.team {
+  padding: 8rem 0;
+  background-color: #23314f;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 0h2v20H9V0zm25.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm-20 20l1.732 1-10 17.32-1.732-1 10-17.32zM58.16 4.134l1 1.732-17.32 10-1-1.732 17.32-10zm-40 40l1 1.732-17.32 10-1-1.732 17.32-10zM80 9v2H60V9h20zM20 69v2H0v-2h20zm79.32-55l-1 1.732-17.32-10L82 4l17.32 10zm-80 80l-1 1.732-17.32-10L2 84l17.32 10zm96.546-75.84l-1.732 1-10-17.32 1.732-1 10 17.32zm-100 100l-1.732 1-10-17.32 1.732-1 10 17.32zM38.16 24.134l1 1.732-17.32 10-1-1.732 17.32-10zM60 29v2H40v-2h20zm19.32 5l-1 1.732-17.32-10L62 24l17.32 10zm16.546 4.16l-1.732 1-10-17.32 1.732-1 10 17.32zM111 40h-2V20h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zM40 49v2H20v-2h20zm19.32 5l-1 1.732-17.32-10L42 44l17.32 10zm16.546 4.16l-1.732 1-10-17.32 1.732-1 10 17.32zM91 60h-2V40h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm24.026 3.294l1 1.732-17.32 10-1-1.732 17.32-10zM39.32 74l-1 1.732-17.32-10L22 64l17.32 10zm16.546 4.16l-1.732 1-10-17.32 1.732-1 10 17.32zM71 80h-2V60h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm24.026 3.294l1 1.732-17.32 10-1-1.732 17.32-10zM120 89v2h-20v-2h20zm-84.134 9.16l-1.732 1-10-17.32 1.732-1 10 17.32zM51 100h-2V80h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm24.026 3.294l1 1.732-17.32 10-1-1.732 17.32-10zM100 109v2H80v-2h20zm19.32 5l-1 1.732-17.32-10 1-1.732 17.32 10zM31 120h-2v-20h2v20z' fill='%23974c8a' fill-opacity='0.5' fill-rule='evenodd'/%3E%3C/svg%3E");
+
+  h2 {
+    font-family: $primary-font;
+    font-weight: $bold;
+    font-size: 4rem;
+    color: $white;
+    line-height: 1;
+
+    @media (max-width: $xsmall) {
+      font-size: 3rem;
+    }
+  }
+
+  &-info {
+    position: relative;
+    display: flex;
+
+    &-marker {
+      // border: 2px solid $white;
+      background: $orange;
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 1rem;
+
+      @media (max-width: $xsmall) {
+        width: 3rem;
+        height: 3rem;
+      }
+
+      &:before {
+        content: "\f0c0";
+        font-family: "Font Awesome 5 Pro";
+        font-weight: 400;
+        color: $white;
+        font-size: 2.4rem;
+        line-height: 0;
+        position: relative;
+        top: 2px;
+
+        @media (max-width: $xsmall) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  p, h2, h3 {
+    color: $white;
+  }
+
+  .member {
+    text-decoration: none;
+    color: $white;
+    margin: 1rem 0 0 0;
+
+    h3 {
+      color: $white;
+      font-family: $primary-font;
+      font-weight: $bold;
+      text-align: center;
+      font-size: 1.75rem;
+    }
+
+    .featured-img {
+      width: 100%;
+      height: 350px;
+      margin-bottom: 1.5rem;
+      display: block;
+      position: relative;
+      clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+      overflow: hidden;
+      border: 10px solid $white;
+      background: $white;
+
+      @media (max-width: $xsmall) {
+        height: 350px;
+      }
+
+      img {
+        clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: .3s ease;
+      }
+    }
+
+    &:hover {
+      .featured-img {
+        img {
+          filter: none;
+          transform: scale(0.98);
+        }
+      }
+    }
+  }
+
+  &-slider {
+    display: flex;
+    position: relative;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+    -webkit-transition: opacity 1s ease;
+
+    &.slick-initialized {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .slick-slide {
+      margin: 0 3rem 0 0;
+      transition: 0.3s all;
+      position: relative;
+      width: 100%;
+      z-index: 10;
+
+      @media (max-width: $xsmall) {
+        margin: 0 2rem 0 0;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .slick-list,
+    .slick-track {
+      width: 100%;
+      display: flex;
+    }
+
+    .slick-list {
+      padding: 0 15vw 0 0;
+      overflow: hidden;
+
+      @media (max-width: $medium) and (min-width: 0px) {
+        padding: 0 5% 0 0;
+      }
+      
+    }
+
+    &__slick-arrows {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 2rem;
+
+      &.desktop {
+        display: flex;
+
+        @media (max-width: $small) {
+          display: none;
+        }
+      }
+
+      &.mobile {
+        display: none;
+
+        @media (max-width: $small) {
+          display: flex;
+          justify-content: flex-start;
+          margin-bottom: 2rem;
+          margin-top: 0;
+        }
+      }
+
+      .slick-arrow {
+        background: $purple;
+        padding: 0.75rem .85rem;
+      }
+
+      .next-slide {
+        &:before {
+          content: "\f054";
+          font-family: "Font Awesome 5 Pro";
+          font-size: 1.375rem;
+          font-weight: 900;
+          display: block;
+          color: $white;
+        }
+
+        &:hover {
+          cursor: pointer;
+          background: $white;
+
+          &:before {
+            content: "\f054";
+            font-family: "Font Awesome 5 Pro";
+            font-size: 1.375rem;
+            font-weight: 900;
+            color: $blue;
+          }
+        }
+      }
+
+      .prev-slide {
+        margin-right: 1rem;
+
+        &:before {
+          content: "\f053";
+          font-family: "Font Awesome 5 Pro";
+          font-size: 1.375rem;
+          font-weight: 900;
+          display: block;
+          color: $white;
+        }
+
+        &:hover {
+          cursor: pointer;
+          background: $white;
+
+          &:before {
+            content: "\f053";
+            font-family: "Font Awesome 5 Pro";
+            font-size: 1.375rem;
+            font-weight: 900;
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+.single-staff {
+  .site-main-wrapper {
+    .container {
+      padding-top: 1.65rem !important;
+    }
+  }
+
+  .backto {
+    text-align: right;
+
+    a {
+      text-decoration: none;
+      margin-bottom: .85rem;
+      display: inline-block;
+      line-height: 1.3;
+      font-weight: $semibold;
+      color: #666;
+      font-size: .95rem;
+      transition: .2s;
+    }
+
+    .far {
+      color: $blue-dark;
+      margin-right: .2rem;
+      position: relative;
+      left: 0;
+      transition: .3s;
+      font-size: 1.1rem;
+      top: 1px;
+    }
+
+    &:hover {
+      .far {
+        left: -.15rem;
+        color: $purple;
+      }
+    }
+  }
+
+  .staff-title {
+    font-weight: $regular;
+    color: $purple;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid $gray;
+    margin-bottom: 2rem;
+  }
+
+  .entry-content {
+    display: flex;
+    padding-bottom: 4rem;
+
+    .staff-thumb {
+      min-width: 350px;
+      width: 100%;
+      margin-right: 1.5rem;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .post-thumbnail img {
+    width: 100%;
+    max-width: 300px;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%);
+  }
+}
+
+// Team archive page
+
+.page-template-page-staff {
+  h1 {
+    margin-bottom: 3.5rem !important;
+  }
+
+  .member {
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    display: block;
+
+    h3 {
+      font-size: 1.6rem;
+      text-align: center;
+      color: $blue-dark;
+      font-weight: $semibold;
+    }
+
+    &-img {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        transition: .3s ease-in-out;
+        width: 100%;
+        object-fit: cover;
+        height: 330px;
+        margin-bottom: 1.5rem;
+        clip-path: polygon(15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%, 0% 15%);
+      }
+    }
+
+    &:hover {
+      .member-img img {
+        transform: scale(1.05);
+      }
+
+      h3 {
+        color: $purple;
+        font-weight: $semibold;
+      }
+    }
+  }
+}

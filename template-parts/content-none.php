@@ -4,14 +4,14 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Pensacola
+ * @package Elmhurst_Family
  */
 
 ?>
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'pensacola' ); ?></h1>
+		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'elmhurst-family' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -21,7 +21,7 @@
 			printf(
 				'<p>' . wp_kses(
 					/* translators: 1: link to WP admin new post page. */
-					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'pensacola' ),
+					__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'elmhurst-family' ),
 					array(
 						'a' => array(
 							'href' => array(),
@@ -34,14 +34,14 @@
 		elseif ( is_search() ) :
 			?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'pensacola' ); ?></p>
+			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'elmhurst-family' ); ?></p>
 			<?php
 			get_search_form();
 
 		else :
 			?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'pensacola' ); ?></p>
+			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'elmhurst-family' ); ?></p>
 			<?php
 			get_search_form();
 

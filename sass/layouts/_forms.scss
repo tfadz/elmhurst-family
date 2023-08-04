@@ -1,4 +1,6 @@
 .gform_wrapper {
+  margin-bottom: 4rem;
+
   .gform_fields {
     list-style: none;
     margin: 0;
@@ -13,35 +15,57 @@
   input[type="text"],
   input[type="email"],
   textarea {
-    background: $white;
-    border: 2px solid $black;
-    font-size: 1.125rem;
-    padding: 1rem;
+    background: linear-gradient(to right, #F4f4f4, #EEE);
+    border: none;
+    border-bottom: 4px solid transparent;
+    border-image: linear-gradient(to left, $green 5%, $blue);
+    border-image-slice: 4;
+    font-weight: $light !important;
+    border-radius: 0;
+    font-size: 1.5rem !important;
+    padding: .85rem 1rem !important;
     width: 100%;
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
     color: $black;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 15px 0px;
+
+
+    &::placeholder {
+      color: $black;
+      font-size: 1.5rem !important;
+      font-weight: $light;
+    }
   }
 
   textarea {
-    height: 200px;
+    height: 200px !important;
+    font-size: 1.5rem !important;
+    font-weight: $light !important;
   }
 
   input[type="submit"] {
     border: none;
-    background: $black;
+    background: $purple;
     color: $white;
+    transition: .3s ease;
+    padding: 1.5rem 1.25rem;
+    border-radius: 5px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
     min-width: 190px;
-    margin: 1rem 0;
-    padding: 1.5rem;
+    margin: 1rem 0 0 0;
     font-size: 1.125rem;
+    text-transform: uppercase;
+    transition: .3s ease;
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
 
     &:hover {
-      background: $blue;
+      background: $green;
+      cursor: pointer;
+      transform: none;
     }
   }
 
@@ -102,9 +126,22 @@
 
 .gform_confirmation_message {
   font-size: 1.125rem;
-  
+
   a {
     border-bottom: 1px solid $blue;
     text-decoration: none;
+  }
+}
+
+.search-form {
+  display: flex;
+
+  input[type="submit"] {
+    background: linear-gradient(to right, $purple 10%, $blue-dark);
+
+    &:hover {
+      background: $blue-dark;
+      cursor: pointer;
+    }
   }
 }

@@ -1,16 +1,153 @@
 .footer {
-  padding: 2rem 0;
-  background: $gray;
-  color: $white;
+  padding: 3rem 0 0 0;
+  background: linear-gradient(to right, $blue-dark 60%, $purple);
+
+  // background: $blue-dark;
+  color: $offwhite;
+
+  p {
+    font-size: 1rem;
+    color: $offwhite;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid $orange;
+  }
+
+  &-row {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+
+    @media (max-width: $medium) {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  }
+
+  &-info {
+    color: $black;
+    font-size: 0.9375rem;
+  }
+
+  &-branding {
+    display: flex;
+    justify-content: flex-end;
+
+    @media (max-width: $medium) {
+      display: block;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  img {
+    width: 100%;
+    max-width: 95px;
+  }
+
+  &-location {
+    > div {
+      padding-left: 1rem;
+
+      @media (max-width: $medium) {
+        padding-left: 0;
+        padding-top: 2rem;
+      }
+    }
+  }
+
+  &-hours {
+    // display: flex;
+    // justify-content: flex-end;
+
+    ul li {
+      font-size: 1rem;
+      font-weight: $bold;
+
+      span {
+        font-weight: normal;
+        padding-left: .35rem;
+      }
+    }
+  }
 
   .menu {
-    display: flex;
+    display: block;
+    column-count: 2;
+    column-gap: 60px;
+
+    @media (max-width: $medium) {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
     li {
-      margin-right: 1rem;
+      padding-bottom: 1.15rem;
     }
 
     a {
+      display: inline-block;
       text-decoration: none;
+      font-size: 1rem;
+      color: $offwhite;
+      font-weight: $semibold;
+      text-transform: uppercase;
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+        color: $white;
+        text-underline-offset: 0.5em;
+      }
+    }
+  }
+
+  &-sub {
+    background: $offwhite;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+
+    &-social {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 2rem;
+      margin: 0;
+
+      li {
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+
+        background: $blue-dark;
+        border-radius: 100%;
+        width: 1.5rem;
+        height: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+          display: block;
+
+          .fab {
+            color: $white;
+            font-size: 1rem;
+          }
+
+          &:hover {
+            .fab {
+              color: $orange;
+            }
+          }
+        }
+      }
     }
   }
 }
