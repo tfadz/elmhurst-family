@@ -16,7 +16,7 @@
     li:hover > ul,
     li.focus > ul {
       left: auto;
-      background: gray;
+      background: #333;
     }
 
     > li {
@@ -63,7 +63,7 @@
           font-family: "Font Awesome 5 Pro";
           font-size: 1.65rem;
           font-weight: 400;
-          color: gray;
+          color: #333;
           position: absolute;
           bottom: .15rem;
           right: .35rem;
@@ -71,7 +71,7 @@
         }
 
         &:hover {
-          background: gray;
+          background: #333;
           color: $white;
 
           > a {

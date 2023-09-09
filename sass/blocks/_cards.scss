@@ -1,0 +1,50 @@
+.cards {
+  &-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    .col {
+      height: 100%;
+      display: block;
+    }
+
+    .card {
+      height: 100%;
+      text-align: center;
+      text-decoration: none;
+      padding: 3rem 1rem;
+      display: block;
+      background: rgba($purple, 0.05);
+      min-height: 300px;
+      overflow: hidden;
+      transition: .3s ease-in-out;
+
+      .subhead {
+        color: $purple;
+        font-size: 1.25rem;
+        font-weight: $bold;
+        padding: 1rem 0;
+      }
+
+      h3 {
+        color: $black;
+        padding: 0;
+        line-height: normal;
+				font-weight: $semibold;
+      }
+
+      .fas {
+        font-size: 3rem;
+        color: purple;
+      }
+
+      &:hover {
+        background: rgba($purple, 1);
+
+        .fas, .subhead, h3 {
+          color: $white;
+        }
+      }
+    }
+  }
+}
