@@ -40,13 +40,13 @@
       &.current-menu-ancestor {
         &:before {
           content: "";
-          border-bottom: 2px solid $purple;
+          border-bottom: 2px solid #AAA;
           bottom: 5px;
           left: 0;
           margin: 0 auto;
           position: absolute;
           right: 0;
-          width: 70%;
+          width: 40%;
         }
       }
 

@@ -31,9 +31,9 @@
                             <div class="footer-hours">
                                 <ul>
                                     <li>Monday: <span>9am&#8212;6pm</span></li>
-                                    <li>Tuesday: <span>8am&#8212;7pm</span></li>
-                                    <li>Wednesday: <span>8am&#8212;8pm</span></li>
-                                    <li>Thursday: <span>8am&#8212;5pm</span></li>
+                                    <li>Tuesday: <span>9am&#8212;7pm</span></li>
+                                    <li>Wednesday: <span>9am&#8212;8pm</span></li>
+                                    <li>Thursday: <span>9am&#8212;5pm</span></li>
                                     <li>Friday: <span>9am&#8212;2pm</span></li>
                                     <li>Saturday: <span>8am&#8212;1pm</span></li>
                                     <li>Sunday: <span>Closed</span></li>

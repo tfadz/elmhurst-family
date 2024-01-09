@@ -1,20 +1,22 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 700px;
   left: 0;
-  top: 0;
+  top: auto;
+  margin-top: 128px;
   z-index: 1;
   overflow: hidden;
 
   &-content {
-    display: block;
+    display: flex;
     z-index: 9999;
     position: relative;
+    height: 700px;
   }
 
   &-slider {
-    height: 100vh !important;
+    height: 700px !important;
     width: 100% !important;
     display: flex !important;
     align-items: flex-start;
@@ -27,9 +29,11 @@
 
     &:before {
       content: "";
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 15%, rgba(0, 0, 0, 0) 100%);
+
+      // background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 15%, rgba(0, 0, 0, 0) 100%);
+      // background: rgba(black, 0.4);
       left: 0;
-      height: 100vh;
+      height: 100%;
       margin: 0 auto;
       position: absolute;
       right: 0;
@@ -40,7 +44,7 @@
 
     .slick-slide {
       display: block;
-      height: 100vh !important;
+      height: 700px !important;
 
       .hero-img {
         width: 100%;
@@ -54,7 +58,7 @@
     .slick-track {
       width: 100%;
       display: flex;
-      height: 100vh;
+      height: 100%;
     }
 
     .slick-list {
@@ -66,29 +70,28 @@
       display: flex !important;
       flex-direction: column;
       align-items: center;
-      bottom: 5vh;
+      top: 10%;
+      height: 100%;
       justify-content: center;
       margin: 0;
       position: absolute;
-      right: 3vh;
+      right: 2vh;
       z-index: 99999;
 
       li {
         margin: 0 0 .5rem 0;
 
         button {
-          background: rgba($offwhite, 0.5);
-          border: none;
-          border-radius: 50%;
-          border: none;
+          background: none;
+          border: 1px solid $white;
           color: transparent;
           cursor: pointer;
           display: block;
           font-size: 0;
-          height: .8rem;
+          height: .7rem;
           line-height: 0;
           outline: 0;
-          width: .8rem;
+          width: .7rem;
 
           &:before {
             font-size: 1rem;
@@ -97,7 +100,7 @@
 
         &.slick-active {
           button {
-            background: $purple;
+            background: $orange;
             border: none;
           }
         }
@@ -106,61 +109,39 @@
   }
 
   &-main {
-    // background: white;
-    padding: 4rem 4rem 5rem 4rem;
-    margin: 2rem auto;
-    min-height: 100vh;
-    max-width: 1075px;
     position: relative;
-    z-index: 5;
     display: flex;
-    justify-content: center;
-
-    @media (max-width: $xsmall) {
-      padding: 2rem 1rem 2rem 1rem;
-    }
 
     &-content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      padding-top: 3rem;
-    }
-
-    small {
       display: block;
-      color: $white;
-      font-size: 2rem;
-      padding: 0 0 .8rem 0;
-      line-height: 1;
-      position: relative;
-      text-shadow: 0 1px 0 #000;
-
-      &:before {
-        display: inline-block;
-        content: none;
-        background: url(./images/leaf--dark.svg) no-repeat;
-        background-size: 45px;
-        opacity: .4;
-        position: absolute;
-        left: 0;
-        height: 100%;
-        width: 100%;
-      }
+      background: rgba($white, 0.8);
+      padding: 4% 7% 4% 9%;
+      border-radius: 0 100px 0 0;
+      left: 0;
+      width: 48%;
+      z-index: 1;
+      height: auto;
+      align-self: flex-end;
     }
 
     h1 {
       display: inline-block;
-      font-family: $primary-font;
-      font-weight: $semibold;
-      font-size: 4rem;
-      color: $white;
-      line-height: 1.1;
-      padding-bottom: 1rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 1px 0 #000;
+      font-family: $font-barlow;
+
+      // letter-spacing: 0.06em;
+      font-weight: $bold;
+      border-left: 4px solid $purple;
+
+      // text-transform: uppercase;
+      font-size: 4.7rem;
+      color: $blue-dark;
+      line-height: 1;
+      margin-bottom: 0;
       position: relative;
+      z-index: 5;
+      padding: 0 0 1rem 2rem;
+
+      // text-shadow: 0 3px 0 rgba($purple, 0.5);
 
       @media (max-width: $xsmall) {
         font-size: 3rem;
@@ -181,14 +162,13 @@
     }
 
     p {
-      color: $white;
-      font-size: 1.65rem;
-      max-width: 650px;
-      margin-top: 0;
-      padding-bottom: 1rem;
-      text-shadow: 0 2px 0 rgba($black, 0.6);
-      text-align: center;
-      line-height: normal;
+      // letter-spacing: 0.03em;
+      font-size: 1.5rem;
+      margin-top: 1.2rem;
+      margin-bottom: 0;
+      padding: 0 0 0 2rem;
+      font-weight: $light;
+      line-height: 1.3;
     }
   }
 
