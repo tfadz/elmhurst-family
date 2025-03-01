@@ -11,7 +11,7 @@
     </figure>
     
     <div class="site-main-wrapper">
-        <div class="container" data-aos="fade-up"data-aos-offset="-200">
+        <div class="container">
             <?php if (!is_home()) : ?>
                 <div class="page-title">
                     <div class="row">

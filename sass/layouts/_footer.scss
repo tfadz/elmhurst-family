@@ -120,6 +120,11 @@
       padding-right: 2rem;
       margin: 0;
 
+      @media (max-width: $xsmall) {
+        justify-content: flex-start;
+        padding-top: .5rem;
+      }
+
       li {
         &:not(:last-child) {
           margin-right: 1rem;

@@ -20,7 +20,7 @@ var premierFunctions = (function($) {
         responsive: [
 
           {
-            breakpoint: 767,
+            breakpoint: 920,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,

@@ -11,7 +11,7 @@
     </figure>
     
     <div class="site-main-wrapper">
-        <div class="container" data-aos="fade-up"data-aos-offset="-200">
+        <div class="container">
             <div class="row">
                 <div class="col">
                     <h1>Our Team</h1>
@@ -27,7 +27,7 @@
             <div class="row">
                 <?php if ( $query->have_posts() ) : ?>
                     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-                        <div class="col-sm-6 col-lg-4" id="post-<?php the_ID(); ?>">
+                        <div class="col-6 col-lg-4" id="post-<?php the_ID(); ?>">
                             <a href="<?php the_permalink(); ?>" class="member">
                                 <?php $featured_img_url = get_the_post_thumbnail_url(); ?>
                                 <?php if($featured_img_url) : ?>
