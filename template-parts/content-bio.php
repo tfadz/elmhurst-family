@@ -10,9 +10,9 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    
+
     <div class="backto">
-        <a href="<?php echo home_url(); ?>/our-team"><i class="far fa-long-arrow-left"></i> Back to team</a>
+        <a href="<?php echo home_url(); ?>/our-team"><svg class="backto-arrow" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to team</a>
     </div>
     <h3 class="staff-title">Team Member</h3>
     <?php
@@ -28,10 +28,10 @@
             <figure class="staff-thumb">
                 <?php elmhurst_family_post_thumbnail(); ?>
             </figure>
-            
+
             <div class="staff-main">
-                    
-        
+
+
             <?php
             the_content(
                 sprintf(
@@ -47,7 +47,7 @@
                     wp_kses_post( get_the_title() )
                     )
                 );
-                
+
                 wp_link_pages(
                     array(
                         'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'elmhurst-family' ),

@@ -128,7 +128,7 @@ if ( ! function_exists( 'elmhurst_family_post_thumbnail' ) ) :
 			?>
 
 			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
+				<?php echo wp_get_attachment_image( get_post_thumbnail_id(), 'post-thumbnail', false, array( 'loading' => 'lazy', 'decoding' => 'async' ) ); ?>
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>

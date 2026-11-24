@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.1.2' );
+	define( '_S_VERSION', '1.1.3' );
 }
 
 if ( ! function_exists( 'elmhurst_family_setup' ) ) :
@@ -169,12 +169,81 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/** Preload the first homepage hero image for the LCP request. */
+function elmhurst_family_preload_home_hero() {
+	if ( ! is_front_page() || ! function_exists( 'get_field' ) ) {
+		return;
+	}
+
+	$front_page_id = (int) get_option( 'page_on_front' );
+	$hero_slides   = get_field( 'hero_slider', $front_page_id );
+	if ( empty( $hero_slides[0]['image'] ) ) {
+		return;
+	}
+
+	$hero_image = $hero_slides[0]['image'];
+	$hero_url   = is_array( $hero_image ) ? ( $hero_image['url'] ?? '' ) : wp_get_attachment_image_url( $hero_image, 'full' );
+	if ( $hero_url ) {
+		printf( "\n<link rel=\"preload\" as=\"image\" href=\"%s\" fetchpriority=\"high\">\n", esc_url( $hero_url ) );
+	}
+}
+add_action( 'wp_head', 'elmhurst_family_preload_home_hero', 1 );
+
+/** Load the remaining stacked Slick hero images after the page's load event. */
+function elmhurst_family_defer_non_lcp_hero_images() {
+	if ( ! is_front_page() ) {
+		return;
+	}
+	wp_add_inline_script(
+		'pensacola-scripts',
+		'window.addEventListener("load",function(){document.querySelectorAll(".hero-slider .hero-img[data-src]").forEach(function(image){image.src=image.dataset.src;image.removeAttribute("data-src");});},{once:true});',
+		'after'
+	);
+}
+add_action( 'wp_enqueue_scripts', 'elmhurst_family_defer_non_lcp_hero_images', 20 );
+
+/** Keep exactly one Font Awesome source and remove compatibility duplicates. */
+function elmhurst_family_cleanup_fontawesome() {
+	wp_dequeue_style( 'font-awesome' );
+	wp_dequeue_style( 'font-awesome-official-v4shim' );
+	wp_dequeue_script( 'fontawesome-js' );
+	wp_dequeue_script( 'font-awesome-official' );
+	wp_dequeue_script( 'font-awesome-official-v4shim' );
+	wp_dequeue_script( 'font-awesome-official-conflict-detector' );
+}
+add_action( 'wp_enqueue_scripts', 'elmhurst_family_cleanup_fontawesome', 100 );
+
 
 add_action( 'wp_loaded', 'disable_wp_theme_update_loaded' );
 function disable_wp_theme_update_loaded() {
     remove_action( 'load-update-core.php', 'wp_update_themes' );
     add_filter( 'pre_site_transient_update_themes', '__return_null' );
 }
+
+/** Add native lazy loading and dimensions to map embeds rendered from page content. */
+function elmhurst_family_map_iframe_attributes( $content ) {
+	return preg_replace_callback(
+		'/<iframe\b[^>]*>/i',
+		function ( $matches ) {
+			$tag = $matches[0];
+			if ( ! preg_match('/(?:snazzymaps\.com|google\.com\/maps)/i', $tag ) ) {
+				return $tag;
+			}
+			if ( ! preg_match('/\sloading=/i', $tag ) ) {
+				$tag = str_replace( '<iframe', '<iframe loading="lazy"', $tag );
+			}
+			if ( ! preg_match('/\swidth=/i', $tag ) ) {
+				$tag = str_replace( '<iframe', '<iframe width="100%"', $tag );
+			}
+			if ( ! preg_match('/\sheight=/i', $tag ) ) {
+				$tag = str_replace( '<iframe', '<iframe height="600"', $tag );
+			}
+			return $tag;
+		},
+		$content
+	);
+}
+add_filter( 'the_content', 'elmhurst_family_map_iframe_attributes', 20 );
 
 
 

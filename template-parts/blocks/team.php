@@ -23,8 +23,7 @@
                     <?php if( $team_posts ): ?>
                         <?php foreach( $team_posts as $p ): ?>
                             <a class="member" href="<?php the_permalink($p->ID); ?>">
-                                <?php $featured_img_url = get_the_post_thumbnail_url($p->ID,'medium_large'); ?>
-                                <div class="featured-img"><img src="<?php echo $featured_img_url ?>" alt=""></div>
+                                <div class="featured-img"><?php echo wp_get_attachment_image( get_post_thumbnail_id( $p->ID ), 'medium_large', false, array( 'loading' => 'lazy', 'decoding' => 'async' ) ); ?></div>
                                 <h3><?php echo get_the_title( $p->ID ); ?></h3>
                             </a>
                         <?php endforeach; ?>

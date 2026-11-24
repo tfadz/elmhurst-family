@@ -1,4 +1,4 @@
-// npm install gulp sass gulp-sass gulp-csso gulp-concat gulp-postcss gulp-sourcemaps gulp-autoprefixer browser-sync gulp-uglify 
+// npm install gulp sass gulp-sass gulp-csso gulp-concat gulp-postcss gulp-sourcemaps gulp-autoprefixer browser-sync gulp-uglify
 
 const { src, dest, watch } = require('gulp');
 const gulp = require('gulp');
@@ -27,15 +27,15 @@ function css() {
 
 function js() {
   return src('./js/theme/*.js')
-  .pipe(concat('theme.js'))   
-  .pipe(uglify())                  
+  .pipe(concat('theme.js'))
+  .pipe(uglify())
   .pipe(gulp.dest('js'))
   .pipe(browserSync.stream());
 }
 
 function browser() {
   browserSync.init({
-      proxy: 'http://localhost:8888/elmhurst',
+      proxy: 'https://elmhurst.local',
       files: [
           './**/*.php',
           './js/theme/*.js'

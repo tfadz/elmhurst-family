@@ -4,7 +4,11 @@
   "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css": "gulp css",
+    "js": "gulp js",
+    "watch": "gulp watch",
+    "build": "gulp css && gulp js"
   },
   "repository": {
     "type": "git",

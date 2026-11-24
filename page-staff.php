@@ -9,7 +9,7 @@
             <img src="<?php bloginfo('template_directory'); ?>/images/bg-placeholder.jpg" alt="">
         <?php endif; ?>
     </figure>
-    
+
     <div class="site-main-wrapper">
         <div class="container">
             <div class="row">
@@ -17,7 +17,7 @@
                     <h1>Our Team</h1>
                 </div>
             </div>
-            <?php 
+            <?php
             $args = array(
                 'post_type' => 'staff',
                 'posts_per_page' => -1,
@@ -29,10 +29,10 @@
                     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
                         <div class="col-6 col-lg-3" id="post-<?php the_ID(); ?>">
                             <a href="<?php the_permalink(); ?>" class="member">
-                                <?php $featured_img_url = get_the_post_thumbnail_url(); ?>
-                                <?php if($featured_img_url) : ?>
+                                <?php $featured_img_id = get_post_thumbnail_id(); ?>
+                                <?php if($featured_img_id) : ?>
                                     <figure class="member-img">
-                                        <img src="<?php echo $featured_img_url ?>" alt="">
+                                        <?php echo wp_get_attachment_image( $featured_img_id, 'medium_large', false, array( 'loading' => 'lazy', 'decoding' => 'async' ) ); ?>
                                     </figure>
                                 <?php endif; ?>
                                 <h3><?php the_title(); ?></h3>
