@@ -264,18 +264,18 @@
       transition: .2s;
     }
 
-    .backto-arrow {
+    .far {
       color: $blue-dark;
       margin-right: .2rem;
       position: relative;
       left: 0;
-      top: 1px;
-      vertical-align: -3px;
       transition: .3s;
+      font-size: 1.1rem;
+      top: 1px;
     }
 
     &:hover {
-      .backto-arrow {
+      .far {
         left: -.15rem;
         color: $purple;
       }

@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.1.3' );
+	define( '_S_VERSION', '1.1.5' );
 }
 
 if ( ! function_exists( 'elmhurst_family_setup' ) ) :
@@ -201,17 +201,6 @@ function elmhurst_family_defer_non_lcp_hero_images() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'elmhurst_family_defer_non_lcp_hero_images', 20 );
-
-/** Keep exactly one Font Awesome source and remove compatibility duplicates. */
-function elmhurst_family_cleanup_fontawesome() {
-	wp_dequeue_style( 'font-awesome' );
-	wp_dequeue_style( 'font-awesome-official-v4shim' );
-	wp_dequeue_script( 'fontawesome-js' );
-	wp_dequeue_script( 'font-awesome-official' );
-	wp_dequeue_script( 'font-awesome-official-v4shim' );
-	wp_dequeue_script( 'font-awesome-official-conflict-detector' );
-}
-add_action( 'wp_enqueue_scripts', 'elmhurst_family_cleanup_fontawesome', 100 );
 
 
 add_action( 'wp_loaded', 'disable_wp_theme_update_loaded' );
