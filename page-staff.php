@@ -27,7 +27,7 @@
             <div class="row">
                 <?php if ( $query->have_posts() ) : ?>
                     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-                        <div class="col-6 col-lg-4" id="post-<?php the_ID(); ?>">
+                        <div class="col-6 col-lg-3" id="post-<?php the_ID(); ?>">
                             <a href="<?php the_permalink(); ?>" class="member">
                                 <?php $featured_img_url = get_the_post_thumbnail_url(); ?>
                                 <?php if($featured_img_url) : ?>

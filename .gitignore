@@ -5,3 +5,5 @@ package-lock.json
 plugins
 wp-admin
 wp-includes
+htaccess
+/backup

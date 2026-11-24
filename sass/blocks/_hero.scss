@@ -10,7 +10,7 @@
 
   @media (max-width: $small) {
     margin-top: 80px;
-    height: 350px;
+    height: 400px
   }
 
   &-content {
@@ -20,7 +20,7 @@
     height: 700px;
 
     @media (max-width: $small) {
-      height: 350px;
+      height: 400px
     }
   }
 
@@ -45,7 +45,7 @@
     }
 
     @media (max-width: $small) {
-      height: 350px !important;
+      height: 400px !important;
     }
 
     &:before {
@@ -142,7 +142,30 @@
       align-self: flex-end;
 
       @media (max-width: $small) {
-        width: 78%;
+        width: 100%;
+        align-self: flex-start;
+        border-radius: 0;
+        background: none;
+        position: relative;
+        z-index: 1;
+        padding: 4rem 1rem;
+        align-self: stretch;
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          height: 100%;
+          background: rgba($black, 0.5);
+          width: 100%;
+          z-index: 0;
+          top: 0;
+        }
+
+        .content {
+          position: relative;
+          z-index: 1;
+        }
       }
     }
 
@@ -150,11 +173,9 @@
       display: inline-block;
       font-family: $font-barlow;
 
-      // letter-spacing: 0.06em;
       font-weight: $bold;
       border-left: 4px solid $purple;
 
-      // text-transform: uppercase;
       font-size: 4.7rem;
       color: $blue-dark;
       line-height: 1;
@@ -166,10 +187,11 @@
       @media (max-width: $small) {
         font-size: 3rem;
         text-align: left;
+        color: $white;
       }
 
       @media (max-width: $xsmall) {
-        font-size: 2.5rem;
+        font-size: 3.25rem;
       }
 
       &:before {
@@ -195,12 +217,13 @@
       line-height: 1.3;
 
       @media (max-width: $small) {
-        font-size: 1.25rem;
+        font-size: 1.3rem;
         margin-top: .5rem;
+        color: $white;
       }
 
       @media (max-width: $xsmall) {
-        font-size: 1.125rem;
+        font-size: 1.2rem;
       }
     }
   }

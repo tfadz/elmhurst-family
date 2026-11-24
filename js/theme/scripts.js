@@ -70,7 +70,7 @@ var premierFunctions = (function($) {
   AOS.init({
   	  offset: 300,
   	  once: false,
-  	  duration: 600,
+  	  duration: 500,
   	  easing: 'ease-in-out',
   	  delay: 150,
   	  disable: 'mobile'

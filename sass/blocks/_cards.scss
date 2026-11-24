@@ -35,9 +35,16 @@
       @media (max-width: $xsmall) {
         font-size: 1rem;
         min-height: 0;
-        padding: 1.5rem 1rem;
-        max-width: 85%;
+        padding: 2rem 1rem;
+        max-width: 95%;
         margin: 0 auto;
+        border-radius: 10px;
+        > div {
+          min-height: 200px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
       }
 
       &-icon {
